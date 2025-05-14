@@ -2,7 +2,7 @@
 
 function Nav() {
     return (
-        <nav>
+        <nav className="Nav">
                 <ul>
                     <li>
                         <a href="/Home">Home</a>

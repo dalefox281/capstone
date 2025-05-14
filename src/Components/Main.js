@@ -2,8 +2,8 @@
 
 function Main() {
     return (
-        <main>
-
+        <main className="Main">
+            Main
         </main>
     );
 };

@@ -2,7 +2,7 @@
 
 function Footer() {
     return (
-        <footer>
+        <footer className='Footer'>
             <img src={require('../Images/lunchSign.jpg')} alt='lunch sign' width={180}></img>
 
             <menu>
