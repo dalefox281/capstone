@@ -7,6 +7,23 @@
   pointer-events: none;
 }
 
+.btn {
+  display: block;
+  background-color: #f4c314;
+  color:#495e57;
+  max-width: 270px;
+  max-height: 44px;
+  font-weight: medium;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+}
+.btn:active {
+  background-color: #333333;
+  color: #edefee;
+}
+
 .App-header {
   display: flex;
   align-items: center;
@@ -45,11 +62,225 @@
 
 .Main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: auto;
   padding: auto;
 }
+/*---------------------Hero Section----------------------- */
+.Hero {
+  display: grid;
+  grid-template-columns: repeat(2, 4fr);
+  column-width: 45vw;
+  background-color: #495e57;
+  color: #edefee;
+}
+.Hero h2 {
+  color: #f4c314;
+  font-size: clamp(1.8rem, calc(5vw + 1rem), 5rem);
+  padding: 0;
+  margin-top: 25%;
+  margin-bottom: -25px;
+}
+.Hero h3 {
+  font-size: 1.5rem;
+  margin-bottom: -10px;
+}
+.Hero_Section {
+  display: grid;
+  grid-template-rows: 2fr, 1fr, 1fr, 1fr, 1fr;
+  margin-top: -50px;
+  margin-right: auto;
+  padding: min(5rem, 8%);
+}
+.Hero img {
+  display: block;
+  border-radius: 1rem;
+  margin-top: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  aspect-ratio: 1/1.5;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  top: 30px;
+}
+/*---------------------Specials--------------------------- */
 
+.Specials header {
+  display: flex;
+  flex-direction: row;
+  padding: min(1rem, 8%);
+  margin-top: 25px;
+  align-items: center;
+}
+.Specials h3 {
+  font-weight:normal;
+  margin-left: 20px;
+  margin-right: auto;
+  font-size: 1.5rem;
+}
+.Specials .btn {
+  margin-right: 20px;
+  width: 200px;
+}
+.Specials main ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.Special_Card footer {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2rem;
+  padding-left: min(5rem, 8%);
+  align-items: center;
+}
+.Special_Card {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  background-color: #d9d9d9;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  min-height: 300px;
+  max-width: 330px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.Card_Body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.Card_Title {
+  display: flex;
+  flex-direction: row;
+  padding-left: min(1rem, 5%);
+  padding-right: min(1rem, 5%);
+}
+.Sp_title {
+  margin-right: 0;
+}
+.Price {
+  color: #ee9972;
+  margin-left: auto;
+}
+.Card_image_container {
+  height: 100%;
+  overflow: hidden;
+}
+.Card_image_container img {
+  aspect-ratio: 1/1;
+  display: block;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/*---------------------Testimonials----------------------- */
+.Testimonials {
+  background-color: #495e57;
+  color:#edefee;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+.ReviewTitle {
+  font-size: 3rem;
+}
+.Testimonials ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* overflow: scroll; */
+  gap: 3rem;
+}
+.ReviewCard {
+  background-color: #ee9972;
+  border-radius: 1rem;
+  margin: 1rem;
+  width: 273px;
+}
+.Testimonials p {
+  width: 80%;
+  margin-left: 1rem;
+}
+.Reviewer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin:1rem;
+}
+.Reviewer img {
+  border-radius: 1rem;
+}
+/*---------------------Mission---------------------------- */
+.mission {
+  background-color: #edefee;
+  color:#333333;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.missiontext {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  padding: 0;
+  margin: 2rem;
+  margin-left: 20%;
+}
+.missiontext h1 {
+  color:#f4c314;
+  font-size: 3rem;
+  margin-bottom: -2rem;
+}
+.missiontext p {
+  margin-top: 3rem;
+  max-width: 65%;
+}
+ .imgcontainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50%;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  margin-right: 20%;
+  margin-top: 3rem;
+}
+.imgcontainer img {
+  border-radius: 1rem;
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+}
+.base-image {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  width: 20rem;
+  height: auto;
+}
+.overlay {
+  position: absolute;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  top: 10px;
+  right: 20px;
+  width: 20rem;
+  height: auto;
+  z-index: 1;
+}
+/*---------------------Footer----------------------------- */
 .Footer {
   color: #edefee;
   min-height: auto;
@@ -58,9 +289,9 @@
   flex-wrap: wrap;
   align-items:start;
   justify-content: center;
-  position:fixed;
+  /* position:sticky;
   left: 0;
-  bottom: 0;
+  bottom: 0; */
   width: 100vw;
 }
 
@@ -80,6 +311,8 @@
 .App-link {
   color: #61dafb;
 }
+
+/*-----------------------Dynamic---------------------------- */
 
 @media (max-width: 768px) {
   .Nav ul {
@@ -106,4 +339,13 @@
   padding: 10px 20px;
   background-color: #edefee;
 }
+
+.Special_Card {
+  margin-right: 2rem;
+}
+
+.imgcontainer {
+  display: none;
+}
+
 }
