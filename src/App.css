@@ -296,7 +296,8 @@
 }
 
 .Footer img {
-  margin-top: 20px;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   border-radius: 18px;
 }
 
@@ -310,6 +311,125 @@
 
 .App-link {
   color: #61dafb;
+}
+
+/*-----------------------Form------------------------------- */
+.BookingPage h1 {
+  margin-left: 6rem;
+  color:#333333;
+  margin-right: auto;
+}
+.BookingPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #edefee;
+  width: 100vw;
+  min-height: 80vh;
+}
+
+.BookingForm {
+  padding: 2rem;
+  border-radius: 1rem;
+  color:#edefee;
+  background-color: #495e57;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 90%;
+  width: clamp(300px, 80%, 600px);
+  gap: 1.5rem;
+  margin:1.5rem;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.BookingForm label {
+  width: 35%;
+  text-align: right;
+  flex-wrap: nowrap;
+}
+
+.BookingForm input,
+.BookingForm select {
+  background-color: #edefee;
+  color:#333333;
+  flex-grow: 1;
+  border-radius: .5rem;
+  height: 1.8rem;
+  padding-left: 1rem;
+  margin-left: 0;
+  margin-right: 25%;
+}
+
+.BookingForm .btn {
+  display: block;
+  background-color: #f4c314;
+  color: #495e57;
+  max-width: 270px;
+  height: 50px;
+  font-weight: medium;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  transition:ease-in-out 100ms;
+}
+
+.BookingForm .btn:active {
+  transform:scale(.99);
+  background-color:#333333;
+  color:#edefee;
+}
+
+@media (max-width: 768px) {
+  .BookingPage h1 {
+    margin-left: auto;
+    color:#333333;
+    margin-right: auto;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+  };
+  .BookingForm {
+    padding:2rem;
+    margin:0;
+  };
+  .BookingForm label {
+    text-align: left;
+    width: auto;
+  };
+  .BookingForm input,
+  .BookingForm select {
+    background-color: #edefee;
+    color:#333333;
+    flex-grow: 1;
+    width: stretch;
+    border-radius: .5rem;
+    height: 1.8rem;
+    padding-left: 1rem;
+    margin-left: 0;
+    margin-right: auto;
+  };
+}
+/*-----------------------Menu------------------------------- */
+
+.menuitems {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 1.5rem;
 }
 
 /*-----------------------Dynamic---------------------------- */

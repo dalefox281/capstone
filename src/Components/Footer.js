@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
@@ -9,22 +9,22 @@ function Footer() {
                 Doormat Navigation
                 <ul>
                     <li>
-                        <a href='/Home'>Home</a>
+                        <Link to="/" className="footer-nav-item">Home</Link>
                     </li>
                     <li>
-                        <a href='/About'>About</a>
+                        <Link to="/about" className="footer-nav-item">About</Link>
                     </li>
                     <li>
-                        <a href='/Menu'>Menu</a>
+                        <Link to="/menu" className="footer-nav-item">Menu</Link>
                     </li>
                     <li>
-                        <a href='/Reservations'>Reservations</a>
+                        <Link to="/booking" className="footer-nav-item">Reservations</Link>
                     </li>
                     <li>
-                        <a href='/OrderOnline'>Order Online</a>
+                        <Link to="/order-online" className="footer-nav-item">Order Online</Link>
                     </li>
                     <li>
-                        <a href='/Login'>Login</a>
+                        <Link to="/login" className="footer-nav-item">Login</Link>
                     </li>
                 </ul>
             </menu>
@@ -39,7 +39,7 @@ function Footer() {
                         <a href='/PhoneNumber'>Phone Number</a>
                     </li>
                     <li>
-                        <a href='EmailUs'>Email Us</a>
+                        <a href='/EmailUs'>Email Us</a>
                     </li>
                 </ul>
             </menu>
