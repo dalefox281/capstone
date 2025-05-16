@@ -1,4 +1,5 @@
 import hero_pic from '../Images/heropic.png';
+import { Link } from 'react-router-dom';
 
 function Hero() {
 
@@ -11,7 +12,7 @@ function Hero() {
                 <h2>Little Lemon</h2>
                 <h3>Chicago</h3>
                 <p>{hero_snippet}</p>
-                <button id='reserve_btn' className="btn">Reserve a table</button>
+                <Link to="/booking"><button id='reserve_btn' className="btn">Reserve a table</button></Link>
             </section>
 
             <img className='Hero_pic' src={hero_pic} alt='Man holding food' width={180} height={270}></img>
