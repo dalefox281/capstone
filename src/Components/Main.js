@@ -4,6 +4,7 @@ import Testimonials from './Testimonials';
 import Mission from './Mission';
 
 function Main() {
+
     return (
         <main className="Main">
             <Hero />

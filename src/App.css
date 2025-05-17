@@ -13,15 +13,17 @@
   color:#495e57;
   max-width: 270px;
   max-height: 44px;
-  font-weight: medium;
   font-size: 20px;
   border-radius: 10px;
   border: none;
   padding: 10px;
+  text-decoration: none;
+  justify-content: center;
 }
-.btn:active {
-  background-color: #333333;
-  color: #edefee;
+
+#reserve_btn {
+  display: flex;
+  align-items: center;
 }
 
 .App-header {
@@ -385,7 +387,7 @@
   transition:ease-in-out 100ms;
 }
 
-.BookingForm .btn:active {
+.btn:active {
   transform:scale(.99);
   background-color:#333333;
   color:#edefee;

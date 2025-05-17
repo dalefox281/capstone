@@ -12,7 +12,7 @@ function Hero() {
                 <h2>Little Lemon</h2>
                 <h3>Chicago</h3>
                 <p>{hero_snippet}</p>
-                <Link to="/booking"><button id='reserve_btn' className="btn">Reserve a table</button></Link>
+                <Link to="/booking" id='reserve_btn' className="btn">Reserve a table</Link>
             </section>
 
             <img className='Hero_pic' src={hero_pic} alt='Man holding food' width={180} height={270}></img>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function BookingForm() {
+function BookingForm({availableTimes, updateTimes}) {
 
     const [resDate, setResDate] = useState(null);
     const [resTime, setResTime] = useState(null);
@@ -8,7 +8,9 @@ function BookingForm() {
     const [resOccasion, setResOccasion] = useState(null);
 
     const dateHandler = (e) => {
-        setResDate(e.target.value);
+        const selectedDate = e.target.value;
+        setResDate(selectedDate);
+        updateTimes(selectedDate);
     };
 
     const timeHandler = (e) => {
@@ -28,6 +30,12 @@ function BookingForm() {
         console.log('Form Submitted: ', {resDate, resTime, resGuest, resOccasion});
     };
 
+    function readTimes() {
+        return availableTimes.map((time, idx) => (
+            <option key={idx} value={time}>{time}</option>
+        ))
+    }
+
     return (
         <>
             <form
@@ -40,12 +48,7 @@ function BookingForm() {
                 <div className='form-group'>
                     <label htmlFor="res-time">Choose time</label>
                     <select id="res-time " value={resTime} onChange={timeHandler}>
-                        <option>17:00</option>
-                        <option>18:00</option>
-                        <option>19:00</option>
-                        <option>20:00</option>
-                        <option>21:00</option>
-                        <option>22:00</option>
+                        {readTimes()}
                     </select>
                 </div>
                 <div className='form-group'>
