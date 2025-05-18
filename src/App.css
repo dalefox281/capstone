@@ -473,9 +473,11 @@ input[type="number"] {
 /*-----------------------Menu------------------------------- */
 
 .menuitems {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 1rem;
 }
 
 /*-----------------------Dynamic---------------------------- */

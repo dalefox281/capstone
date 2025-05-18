@@ -1,16 +1,13 @@
 import BookingForm from "./BookingForm";
 import { useReducer } from 'react';
+import { fetchAPI } from "../api";
 
 // Utility function for initial times (exported for testing)
-const initializeTimes = () => [
-    'Choose time',
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00',
-];
+
+function initializeTimes(dateObject) {
+    const times = fetchAPI(dateObject);
+    return times;
+}
 
 function timesReducer(state, action) {
     switch (action.type) {
@@ -26,7 +23,8 @@ function BookingPage() {
 
     // updateTimes must be inside the component to access dispatch
     const updateTimes = (selectedDate) => {
-        const newAvailableTimes = initializeTimes();
+        const dateObj = typeof selectedDate === 'string' ? new Date(selectedDate) : selectedDate;
+        const newAvailableTimes = initializeTimes(dateObj);
         dispatch({ type: 'SET_TIMES', payload: newAvailableTimes });
     };
 

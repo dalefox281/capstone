@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { submitAPI } from '../api';
 
 function BookingForm({availableTimes, updateTimes}) {
 
@@ -41,7 +42,11 @@ const decrementGuest = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Form Submitted: ', {resDate, resTime, resGuest, resOccasion});
+        const bookingDetails = {resDate, resTime, resGuest, resOccasion}
+        const result = submitAPI(bookingDetails);
+        console.log(bookingDetails);
+        console.log('submitAPI returned:', result);
+        return result;
     };
 
     function readTimes() {
