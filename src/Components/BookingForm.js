@@ -4,8 +4,22 @@ function BookingForm({availableTimes, updateTimes}) {
 
     const [resDate, setResDate] = useState(null);
     const [resTime, setResTime] = useState(null);
-    const [resGuest, setResGuest] = useState(null);
+    const [resGuest, setResGuest] = useState(1);
     const [resOccasion, setResOccasion] = useState(null);
+
+    const incrementGuest = () => {
+    setResGuest(prev => {
+        const next = Number(prev) + 1;
+        return next > 10 ? 10 : next;
+        });
+    };
+
+const decrementGuest = () => {
+    setResGuest(prev => {
+        const next = Number(prev) - 1;
+        return next < 1 ? 1 : next;
+        });
+    };
 
     const dateHandler = (e) => {
         const selectedDate = e.target.value;
@@ -47,22 +61,34 @@ function BookingForm({availableTimes, updateTimes}) {
                 </div>
                 <div className='form-group'>
                     <label htmlFor="res-time">Choose time</label>
-                    <select id="res-time " value={resTime} onChange={timeHandler}>
+                    <select
+                        data-testid="time-select"
+                        id="res-time "
+                        value={resTime}
+                        onChange={timeHandler}>
                         {readTimes()}
                     </select>
                 </div>
                 <div className='form-group'>
-                    <label htmlFor="guests">Number of guests</label>
-                    <input value={resGuest} onChange={guestHandler}
-                    type="number" placeholder="1" min="1" max="10" id="guests" />
+                    <label htmlFor='guests'>Number of guests</label>
+                    <div className="number-input">
+                        <button type="button" className="decrement" onClick={decrementGuest}>-</button>
+                        <input id='guests' type="number" value={resGuest} min="1" max="10" onChange={guestHandler} />
+                        <button type="button" className="increment" onClick={incrementGuest}>+</button>
+                    </div>
                 </div>
                 <div className='form-group'>
                     <label htmlFor="occasion">Occasion</label>
-                    <select id="occasion" value={resOccasion} onChange={occasionHandler}>
-                        <option>Birthday</option>
-                        <option>Anniversary</option>
-                        <option>Graduation</option>
-                        <option>Other</option>
+                    <select
+                        id="occasion"
+                        value={resOccasion}
+                        onChange={occasionHandler}
+                    >
+                            <option>Choose the occasion...</option>
+                            <option>Birthday</option>
+                            <option>Anniversary</option>
+                            <option>Graduation</option>
+                            <option>Other</option>
                     </select>
                 </div>
                     <input type="submit" className='btn' value="Make Your reservation" />

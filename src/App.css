@@ -387,6 +387,50 @@
   transition:ease-in-out 100ms;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.number-input {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 0.5rem;
+}
+
+.number-input input[type="number"] {
+  width: 3rem;
+  text-align: center;
+  align-items: center;
+  margin: auto;
+  -moz-appearance: textfield;
+}
+
+.number-input button {
+  background: #f4c314;
+  color: #495e57;
+  border: none;
+  border-radius: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.number-input button:active {
+  background: #333333;
+  color: #edefee;
+}
+
 .btn:active {
   transform:scale(.99);
   background-color:#333333;
