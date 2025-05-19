@@ -1,29 +1,30 @@
 import { render, fireEvent, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 import BookingPage, { initializeTimes } from './Components/BookingPage';
 
 test('renders submission button', () => {
-  render(<BookingPage />);
+  render(<MemoryRouter><BookingPage /></MemoryRouter>);
   const buttonElement = screen.getByText("Make Your reservation");
   expect(buttonElement).toBeInTheDocument();
 });
 
 test('returns expected initialized times', () => {
-  const expectedValue = [
-            'Choose time',
-            '17:00',
-            '18:00',
-            '19:00',
-            '20:00',
-            '21:00',
-            '22:00',
-        ];
-  const result = initializeTimes();
-  expect(result).toEqual(expectedValue);
+  const expectedValue = [true, true]; // Is a list with content, contains formatted times
+  const result = initializeTimes(new Date());
+  const resultIsList = Array.isArray(result) && result.length > 0;
+
+  const timeFormat = /^[0-9]{2}:[0-9]{2}$/;
+  const resultHasTimes = result.every(time => timeFormat.test(time));
+
+  const determination = [resultIsList, resultHasTimes];
+  expect(determination).toEqual(expectedValue);
 });
 
 test('updateTimes updates availableTimes when a date is selected', () => {
-  render(<BookingPage />);
+  render(<MemoryRouter>
+          <BookingPage />
+        </MemoryRouter>);
   // Initially, the time select should have no options (since availableTimes is empty)
   let timeSelect = screen.getByTestId("time-select");
   expect(timeSelect.options.length).toBe(0);
@@ -35,15 +36,16 @@ test('updateTimes updates availableTimes when a date is selected', () => {
 // After selecting a date, the time select should be populated
   timeSelect = screen.getByTestId("time-select");
   const options = Array.from(timeSelect.options);
-  const expectedOptions = [
-    'Choose time',
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00',
-  ];
+  const expectation = [true, true]; // Is a list with items, items are formatted times
+
   const optionTexts = options.map(option => option.textContent);
-  expect(optionTexts).toEqual(expectedOptions);
+
+  const isList = Array.isArray(optionTexts) && optionTexts.length > 0;
+
+  const timeFormat = /^[0-9]{2}:[0-9]{2}$/;
+  const hasTimes = optionTexts.every(time => timeFormat.test(time));
+
+  const determination = [isList, hasTimes];
+
+  expect(determination).toEqual(expectation);
 });

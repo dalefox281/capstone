@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { submitAPI } from '../api';
 
-function BookingForm({availableTimes, updateTimes}) {
+function BookingForm({availableTimes, updateTimes, submitForm}) {
 
     const [resDate, setResDate] = useState(null);
     const [resTime, setResTime] = useState(null);
@@ -43,10 +42,11 @@ const decrementGuest = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const bookingDetails = {resDate, resTime, resGuest, resOccasion}
-        const result = submitAPI(bookingDetails);
         console.log(bookingDetails);
-        console.log('submitAPI returned:', result);
-        return result;
+
+        const bookingDetailsString = JSON.stringify(bookingDetails);
+        localStorage.setItem('bookingDetails', bookingDetailsString);
+        submitForm(bookingDetails);
     };
 
     function readTimes() {

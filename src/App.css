@@ -396,7 +396,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* Firefox */
 input[type="number"] {
-  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .number-input {
@@ -411,7 +411,7 @@ input[type="number"] {
   text-align: center;
   align-items: center;
   margin: auto;
-  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .number-input button {
@@ -470,6 +470,53 @@ input[type="number"] {
     margin-right: auto;
   };
 }
+/*-----------------Confirmation Page------------------------ */
+.confirmedBooking {
+  display: flex;
+  flex-direction: column;
+}
+.confirmedBooking h1 {
+  color: #333333;
+  margin-left: 15%;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+}
+.confirmationCard {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  background-color: #495e57;
+  color:#edefee;
+  width: clamp(380px, 35%, 90%);
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+}
+.confirmationCard h2 {
+  position: relative;
+  text-decoration: none;
+  font-size: clamp(1.3rem, 2rem, 2.5rem);
+}
+.confirmation-underline {
+  width: 95%;
+  border-bottom: 2px dotted #edefee;
+  margin-bottom: 0;
+  padding:0;
+}
+.confirmationCard ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+  list-style: none;
+  border-radius: 1rem;
+  font-size: clamp(1rem, 1.7rem, 2rem);
+}
+.confirmationCard ul li {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
 /*-----------------------Menu------------------------------- */
 
 .menuitems {

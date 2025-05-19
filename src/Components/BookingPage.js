@@ -1,6 +1,7 @@
 import BookingForm from "./BookingForm";
 import { useReducer } from 'react';
-import { fetchAPI } from "../api";
+import { fetchAPI, submitAPI } from "../api";
+import { useNavigate } from "react-router-dom";
 
 // Utility function for initial times (exported for testing)
 
@@ -20,12 +21,23 @@ function timesReducer(state, action) {
 
 function BookingPage() {
     const [availableTimes, dispatch] = useReducer(timesReducer, []);
-
+    const navigate = useNavigate();
     // updateTimes must be inside the component to access dispatch
     const updateTimes = (selectedDate) => {
         const dateObj = typeof selectedDate === 'string' ? new Date(selectedDate) : selectedDate;
         const newAvailableTimes = initializeTimes(dateObj);
         dispatch({ type: 'SET_TIMES', payload: newAvailableTimes });
+    };
+
+    function submitForm(bookingDetails) {
+        const result = submitAPI(bookingDetails);
+        console.log(result);
+        if (result === true) {
+            navigate('/booking-confirmation', { state: bookingDetails });
+            // return bookingDetails;
+        } else {
+            alert("Try again");
+        };
     };
 
     return (
@@ -34,6 +46,7 @@ function BookingPage() {
             <BookingForm
                 availableTimes={availableTimes}
                 updateTimes={updateTimes}
+                submitForm={submitForm}
             />
         </div>
     );

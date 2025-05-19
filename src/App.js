@@ -5,6 +5,7 @@ import Header from './Components/Header';
 import Main from './Components/Main';
 import Footer from './Components/Footer';
 import BookingPage from './Components/BookingPage';
+import ConfirmedBooking from './Components/ConfirmedBooking'
 import About from './Components/About';
 import Menu from './Components/Menu';
 import OrderOnline from './Components/OrderOnline';
@@ -18,6 +19,7 @@ function App() {
 
         <Route path="/" element={<Main />}></Route>
         <Route path="/booking" element={<BookingPage />}></Route>
+        <Route path='/booking-confirmation' element={<ConfirmedBooking />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/menu" element={<Menu />}></Route>
         <Route path='/order-online' element={<OrderOnline />}></Route>
