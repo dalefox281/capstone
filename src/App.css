@@ -316,6 +316,12 @@
 }
 
 /*-----------------------Form------------------------------- */
+.error {
+  color:#ee9972;
+  font-size: .9rem;
+  margin-left: 1rem;
+  align-self: center;
+}
 .BookingPage h1 {
   margin-left: 6rem;
   color:#333333;
@@ -350,6 +356,10 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+}
+.form-group span {
+  display: flex;
+  flex-direction: column;
 }
 
 .BookingForm label {
